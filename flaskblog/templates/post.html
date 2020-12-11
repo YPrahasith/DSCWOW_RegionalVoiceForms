@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+<article class="media content-section">
+  <img class="rounded-circle article-img"
+    src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2"
+        href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+      <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+      {% if post.author == current_user %}
+      <div>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1"
+          href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+        <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal"
+          data-target="#deleteModal">Delete</button>
+      </div>
+      {% endif %}
+    </div>
+
+    <h2 class="article-title">{{ post.title }}</h2>
+    <p class="article-content">{{ post.content }}</p>
+
+    <div class="container" style="display:block;">
+      <select id="lang" class="bootstrap-select" style="float:right; ">
+        <option value="1" selected="selected">Choose Language</option>
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="ml">Malayalam</option>
+        <option value="es">Spanish</option>
+        <option value="ta">Tamil</option>
+        <option value="te">Telugu</option>
+      </select>
+    </div>
+    <button onclick="translateFn()"
+      style="border-radius:10%; padding: 1%; margin:1% 2%; float:right; color:black; clear:right;">Translate Questions
+    </button>
+
+    <p id="firstq">{{ post.firstq }}</p><br>
+    <p id="hidden1" style="display:none;"> </p>
+    <input id="note-textarea1" type="text" name="firstq"><br><br>
+
+    <p id="secondq">{{ post.secondq }}</p><br>
+    <p id="hidden2" style="display:none;"> </p>
+    <input id="note-textarea2" type="text" name="secondq"><br><br>
+
+    <p id="thirdq">{{ post.thirdq }}</p><br>
+    <p id="hidden3" style="display:none;"> </p>
+    <input id="note-textarea3" type="text" name="thirdq"><br><br>
+
+    <p id="forthq">{{ post.forthq }}</p><br>
+    <p id="hidden4" style="display:none;"> </p>
+    <input id="note-textarea4" type="text" name="forthq"><br><br>
+
+    <p id="fifthq">{{ post.fifthq }}</p><br>
+    <p id="hidden5" style="display:none;"> </p>
+    <input id="note-textarea5" type="text" name="fifthq"><br><br>
+
+    <input type="submit" value="Submit">
+  </div>
+</article>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
+          <input class="btn btn-danger" type="submit" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

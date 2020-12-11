@@ -1,0 +1,99 @@
+body {
+  background: #010c11;
+  color: #928f8a;
+  margin-top: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgb(189, 183, 175);
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #1b1d1e;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.content-section {
+  background-image: initial;
+  background-color: rgb(21, 23, 24);
+  border-top-color: rgb(140, 130, 115);
+  border-right-color: rgb(140, 130, 115);
+  border-bottom-color: rgb(140, 130, 115);
+  border-left-color: rgb(140, 130, 115);
+}
+
+.article-title {
+  color: #bdb7af;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.list-group-item-light {
+  color: rgb(153, 144, 131);
+  background-color: rgb(25, 27, 28);
+}
