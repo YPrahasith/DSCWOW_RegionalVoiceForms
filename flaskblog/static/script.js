@@ -45,7 +45,7 @@ recognition.onresult = function (event) {
       noteContent = $(this).val();
     });
     var msg1 = new SpeechSynthesisUtterance(
-    document.getElementById("secondq").textContent
+    document.getElementById("hidden2").textContent
     );
     window.speechSynthesis.speak(msg1);
   } else if (startcntr == 2) {
@@ -54,7 +54,7 @@ recognition.onresult = function (event) {
       noteContent = $(this).val();
     });
     var msg2 = new SpeechSynthesisUtterance(
-    document.getElementById("thirdq").textContent
+    document.getElementById("hidden3").textContent
     );
     window.speechSynthesis.speak(msg2);
   } else if (startcntr == 3) {
@@ -63,7 +63,7 @@ recognition.onresult = function (event) {
       noteContent = $(this).val();
     });
     var msg3 = new SpeechSynthesisUtterance(
-    document.getElementById("forthq").textContent
+    document.getElementById("hidden4").textContent
     );
     window.speechSynthesis.speak(msg3);
   } else if (startcntr == 4) {
@@ -72,7 +72,7 @@ recognition.onresult = function (event) {
       noteContent = $(this).val();
     });
     var msg4 = new SpeechSynthesisUtterance(
-    document.getElementById("fifthq").textContent
+    document.getElementById("hidden5").textContent
     );
     window.speechSynthesis.speak(msg4);
   } else if (startcntr == 5) {
@@ -105,7 +105,7 @@ recognition.onerror = function (event) {
 $("#lang").on("click", function (e) {
   if (startcntr == 1) {
     var msg = new SpeechSynthesisUtterance(
-      document.getElementById("firstq").textContent
+      document.getElementById("hidden1").textContent
     );
     window.speechSynthesis.speak(msg);
   }
